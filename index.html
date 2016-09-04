@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Youtube RSS Extractor by jeffkeeling</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/skeleton/css/normalize.css">
+    <link rel="stylesheet" href="stylesheets/skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+    <div class="container">
+        <header>
+            <h1>Youtube RSS Extractor</h1>
+        </header>
+
+        <section class="form-container">
+            <form id="youtube-form">
+                <div class="row">
+                    <div class="twelve columns">
+                        <input class="u-full-width" id="user-input" type="text" placeholder=" youtube channel URL here">
+                    </div>
+                </div>
+                <input class="button-primary" type="submit" value="generate RSS link">
+            </form>
+            <div class="output">
+                <p id="error" class="hidden"></p>
+                <div id="rss-container" class="hidden">
+                    <div class="link-wrapper">
+                        <div class="link-label">RSS link:</div>
+                        <textarea id="rss-link"></textarea>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="directions">
+            <h6>Directions</h6>
+            <p>Go to the home page of the Youtube channel whose RSS feed you want. And copy its URL in the address bar.</p>
+            <p>It will look like this: <code>https://www.youtube.com/channel/UCrTNhL_yO3tPTdQ5XgmmWjA</code>
+            <p>You want to make sure the Youtube URL has <code>/channel/</code> and not <code>/user/</code>. If it has <code>/user/</code>, try to go to the main home tab of the channel and refresh the page. </p>
+            <p>Paste that URL in the box above and press the button to get a link to the RSS feed for that Youtube channel.
+        </section>
+
+        <footer>
+          <p>This project is maintained by <a href="https://github.com/jeffkeeling">jeffkeeling</a></p>
+          <p><small>Hosted on GitHub Pages</small></p>
+        </footer>
+
+    </div>
+    <script src="javascripts/extractRSS.js"></script>
+  </body>
+</html>

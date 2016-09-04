@@ -1,0 +1,65 @@
+.container {
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+
+.form-container {
+
+}
+
+#youtube-form {
+    margin-bottom: 0.5rem;
+}
+.output {
+    height: 50px;
+}
+
+.hidden {
+    display: none;
+}
+
+#error {
+    color: #f15555;
+    margin-bottom: 0px;
+}
+
+code {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
+}
+
+.link-wrapper {
+    display: flex;
+}
+
+textarea {
+    flex: 1;
+}
+
+.link-label {
+    font-weight: bolder;
+    padding-right: 10px;
+    min-width: 80px;
+}
+
+.directions {
+    margin-top: 20px;
+}
+
+.directions p {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.directions h6 {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+footer {
+    margin-top: 40px;
+}
+
