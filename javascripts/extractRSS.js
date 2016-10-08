@@ -5,26 +5,37 @@ var form = document.getElementById('youtube-form'),
     rssContainer = document.getElementById('rss-container'),
 
     showError = function() {
-        error.innerHTML = 'Unable to get the channel ID from URL provided';
+        error.innerHTML = 'Unable to get the correct RSS ID from URL provided';
 
         // remove hidden class
         error.className = '';
     },
 
-    showRssUrl = function(channelId) {
+    getChannelUrl = function(channelId) {
         var rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + channelId;
-        rssLink.innerHTML = rssUrl;
-
-        // remove hidden class
-        rssContainer.className = '';
-        
+        showUrl(rssUrl);
     },
 
-    getChannelId = function(url) {
-        var channelMatch = url.match(/\/channel\/([a-zA-Z0-9_]+)/);
+    getPlaylistUrl = function(playlistId) {
+        var rssUrl = 'https://www.youtube.com/feeds/videos.xml?playlist_id=' + playlistId;
+        showUrl(rssUrl);
+    },
+
+    showUrl = function(url) {
+        rssLink.innerHTML = url;
+        // remove hidden class
+        rssContainer.className = '';
+    },
+
+    getRssId = function(url) {
+
+        var channelMatch = url.match(/\/channel\/([a-zA-Z0-9_-]+)/),
+            playlistMatch = url.match(/\/playlist\?list=([a-zA-Z0-9_-]+)/);
 
         if (channelMatch) {
-            showRssUrl(channelMatch[1]);
+            getChannelUrl(channelMatch[1]);
+        } else if (playlistMatch) {
+            getPlaylistUrl(playlistMatch[1]);
         } else {
             showError();
         }
@@ -43,7 +54,7 @@ var form = document.getElementById('youtube-form'),
         error.className = 'hidden';
         rssContainer.className = 'hidden';
         
-        getChannelId(url);
+        getRssId(url);
     };
 
 if (form.addEventListener) {
